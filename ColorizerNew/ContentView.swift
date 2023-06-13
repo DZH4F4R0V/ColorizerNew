@@ -8,12 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var redSliderValue = Double.random(in: 0...255)
+    @State private var greenSliderValue = Double.random(in: 0...255)
+    @State private var blueSliderValue = Double.random(in: 0...255)
+    
+    let backgroundColor = CGColor(red: 0, green: 75 / 255, blue: 150 / 255, alpha: 1)
+    
     var body: some View {
         ZStack {
-            Color.blue.ignoresSafeArea()
+            Color(backgroundColor).ignoresSafeArea()
             VStack {
-                Color(red: <#T##Double#>, green: <#T##Double#>, blue: <#T##Double#>)
-                SliderView()
+                Color(
+                    .displayP3,
+                    red: redSliderValue / 255,
+                    green: greenSliderValue / 255,
+                    blue: blueSliderValue / 255,
+                    opacity: 1.0
+                )
+                .frame(width: 300, height: 150)
+                .cornerRadius(20)
+                .shadow(radius: 10)
+                .padding()
+                VStack {
+                    ColorSlidersView(value: $redSliderValue, color: .red)
+                    ColorSlidersView(value: $greenSliderValue, color: .green)
+                    ColorSlidersView(value: $blueSliderValue, color: .blue)
+                }
+                .foregroundColor(.white)
+                .padding()
                 Spacer()
             }
         }
@@ -23,5 +45,20 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct ColorSlidersView: View {
+    @Binding var value: Double
+    let color: Color
+    
+    var body: some View {
+        HStack{
+            Text("\(lround(value))").foregroundColor(.white)
+            Slider(value: $value, in: 0...255, step: 1)
+                .padding(EdgeInsets(top: 3, leading: 0, bottom: 0, trailing: 3))
+                .accentColor(color)
+            Text("\(lround(value))").foregroundColor(.white)
+        }
     }
 }
