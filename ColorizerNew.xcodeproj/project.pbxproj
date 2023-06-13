@@ -11,6 +11,7 @@
 		1FFAB9162A39017400234F2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAB9152A39017400234F2C /* ContentView.swift */; };
 		1FFAB9182A39017600234F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFAB9172A39017600234F2C /* Assets.xcassets */; };
 		1FFAB91B2A39017600234F2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFAB91A2A39017600234F2C /* Preview Assets.xcassets */; };
+		1FFAB9222A39031700234F2C /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFAB9212A39031700234F2C /* SliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1FFAB9152A39017400234F2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1FFAB9172A39017600234F2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FFAB91A2A39017600234F2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1FFAB9212A39031700234F2C /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				1FFAB9132A39017400234F2C /* ColorizerNewApp.swift */,
 				1FFAB9152A39017400234F2C /* ContentView.swift */,
+				1FFAB9212A39031700234F2C /* SliderView.swift */,
 				1FFAB9172A39017600234F2C /* Assets.xcassets */,
 				1FFAB9192A39017600234F2C /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FFAB9222A39031700234F2C /* SliderView.swift in Sources */,
 				1FFAB9162A39017400234F2C /* ContentView.swift in Sources */,
 				1FFAB9142A39017400234F2C /* ColorizerNewApp.swift in Sources */,
 			);
