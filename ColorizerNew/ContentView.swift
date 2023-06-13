@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var greenSliderValue = Double.random(in: 0...255)
     @State private var blueSliderValue = Double.random(in: 0...255)
     
-    let backgroundColor = CGColor(red: 0, green: 75 / 255, blue: 150 / 255, alpha: 1)
+    let backgroundColor = CGColor(red: 0, green: 0.29, blue: 0.588, alpha: 1)
     
     var body: some View {
         ZStack {
@@ -55,10 +55,12 @@ struct ColorSlidersView: View {
     var body: some View {
         HStack{
             Text("\(lround(value))").foregroundColor(.white)
+                .frame(width: 50)
             Slider(value: $value, in: 0...255, step: 1)
                 .padding(EdgeInsets(top: 3, leading: 0, bottom: 0, trailing: 3))
                 .accentColor(color)
             Text("\(lround(value))").foregroundColor(.white)
+                .frame(width: 50)
         }
     }
 }
