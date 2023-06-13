@@ -18,17 +18,21 @@ struct ContentView: View {
         ZStack {
             Color(backgroundColor).ignoresSafeArea()
             VStack {
-                Color(
-                    .displayP3,
-                    red: redSliderValue / 255,
-                    green: greenSliderValue / 255,
-                    blue: blueSliderValue / 255,
-                    opacity: 1.0
+                colorView(
+                    red: $redSliderValue,
+                    green: $greenSliderValue,
+                    blue: $blueSliderValue
                 )
-                .frame(width: 300, height: 150)
-                .cornerRadius(20)
-                .shadow(radius: 10)
-                .padding()
+                    .frame(width: 350, height: 150)
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(.white, lineWidth: 4))
+                    .cornerRadius(20)
+                    .shadow(color: Color(.displayP3,
+                                         red: redSliderValue / 255,
+                                         green: greenSliderValue / 255,
+                                         blue: blueSliderValue / 255,
+                                         opacity: 1.0
+                                        ), radius: 30)
+                    .padding()
                 VStack {
                     ColorSlidersView(value: $redSliderValue, color: .red)
                     ColorSlidersView(value: $greenSliderValue, color: .green)
@@ -62,5 +66,21 @@ struct ColorSlidersView: View {
             Text("\(lround(value))").foregroundColor(.white)
                 .frame(width: 50)
         }
+    }
+}
+
+struct colorView: View {
+    @Binding var red: Double
+    @Binding var green: Double
+    @Binding var blue: Double
+    
+    var body: some View {
+        Color(
+            .displayP3,
+            red: red / 255,
+            green: green / 255,
+            blue: blue / 255,
+            opacity: 1.0
+        )
     }
 }
